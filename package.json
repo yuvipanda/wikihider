@@ -1,0 +1,23 @@
+{
+  "title": "WikiHide",
+  "name": "wikihide",
+  "version": "0.0.1",
+  "description": "Allows hiding Wikimedia conversations involving people you would prefer to not interact with",
+  "main": "index.js",
+  "author": "Yuvi Panda",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ],
+  "preferences": [{
+    "name": "hiddenUsers",
+    "title": "Users to hide",
+    "description": "List of users to hide, separated by commas",
+    "type": "string",
+    "value": ""
+  }]
+}

@@ -64,6 +64,11 @@ function parseConversations() {
     return conversations;
 }
 
+/**
+ * ToCs are ULs with their own custom numbers output in the HTML.
+ *
+ * This re-numbers them to take into account deleted entries
+ */
 function renumberToC() {
     var curNumber = 1;
     for (var li of document.querySelectorAll("#toc li")) {
@@ -74,6 +79,9 @@ function renumberToC() {
     }
 }
 
+/**
+ * Hide or show conversations in current page based on userList
+ */
 function hideConversationsWithUsers(conversations, userList) {
     conversations.forEach(function(conversation) {
         if (conversation.isTainted(userList)) {
@@ -89,6 +97,9 @@ function hideConversationsWithUsers(conversations, userList) {
     renumberToC();
 }
 
+/**
+ * I'm clearly not writing much JS these days, so I'll call it 'main'
+ */
 function main() {
     var conversations = parseConversations();
     self.port.on('setHiddenUsers', function(userList) {
